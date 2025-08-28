@@ -1,19 +1,12 @@
 "use client";
 
-import { useSearchParams, useRouter } from "next/navigation";
-import TodoApp from "@/components/TodoApp";
-import { useEffect } from "react";
+import { Suspense } from "react";
+import TasksPageContent from "./TasksPageContent";
 
 export default function TasksPage() {
-  const search = useSearchParams();
-  const router = useRouter();
-  const email = search.get("email") ?? "";
-
-  useEffect(() => {
-    if (!email) router.replace("/");
-  }, [email, router]);
-
-  if (!email) return null;
-
-  return <TodoApp email={email} />;
+  return (
+    <Suspense fallback={<div>Carregando...</div>}>
+      <TasksPageContent />
+    </Suspense>
+  );
 }

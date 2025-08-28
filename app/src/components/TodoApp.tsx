@@ -103,7 +103,6 @@ export default function TodoApp({ email }: Props) {
 
         <TaskList
           tasks={tasks}
-          isLoading={isLoading}
           onToggleComplete={handleToggleComplete}
           onUpdate={handleUpdateTask}
           onDelete={setTaskToDelete}

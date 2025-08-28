@@ -9,7 +9,6 @@ import type { Task } from "@/lib/tasks";
 
 interface TaskListProps {
   tasks: Task[];
-  isLoading: boolean;
   onToggleComplete: (task: Task) => Promise<void>;
   onUpdate: (
     id: string,
@@ -24,7 +23,6 @@ interface TaskListProps {
 
 export function TaskList({
   tasks,
-  isLoading,
   onToggleComplete,
   onUpdate,
   onDelete,
